@@ -223,3 +223,44 @@ function calcontent(channel)
     }
 	}
 }
+
+function calmix()
+{
+	var percentA = document.getElementById('contentxA');
+	var percentB = document.getElementById('contentxB');
+	var target_percent = document.getElementById('target_percent');
+	var target_weight = document.getElementById('target_weight');
+	var weightA = document.getElementById('targetxA');
+	var weightB = document.getElementById('targetxB');
+	
+	var weight_percentA = document.getElementById('wpA');
+	var weight_percentB = document.getElementById('wpB');
+
+	weight_percentA.value = percentB.value / (percentA.value + percentB.value) * target_percent.value;
+	weight_percentB.value = percentA.value / (percentA.value + percentB.value) * target_percent.value;
+
+	weightA.value = Math.round(weight_percentA.value * target_weight.value)/100;
+	weightB.value = Math.round(weight_percentA.value * target_weight.value)/100;
+ 	
+ 	if (percentA.value<target_percent.value && percentB.value<target_percent.value) {
+      alert("Both inputs are lower than target concentration. Imposible to mix.");
+      weightA.value = -1;
+      weightB.value = -1;
+ 	}
+ 	if ((percentA.value + percentB.value) == 0) {
+      alert("Havn't Set the Percentage");
+      weightA.value = -1;
+      weightB.value = -1;
+ 	}
+
+ 	if (target_percent.value > 100 ) {
+    	alert("Content above 100%. Please check your input.");
+    	weightA.value = -1;
+      	weightB.value = -1;
+    }
+	if (target_percent.value < 0 ) {
+    	alert("Content above 0%. Please check your input.");
+    	weightA.value = -1;
+      	weightB.value = -1;
+    }
+}

@@ -26,6 +26,7 @@
 			  </caption>
 			</table>
 			<hr>
+			<hr>
 			<table>
 				<colgroup>
 					<col width="110">
@@ -118,8 +119,6 @@
 					</tr>
 				</tbody>
 			</table>
-			<p class="footnote_table">Calcuation is based on W. C. Schumb, C. N. Satterfield, R. L. Wentworth (Hydrogen peroxide, New York - London 1955)</p>
-			<hr>
 			<hr>
 			<table>
 				<colgroup>
@@ -213,6 +212,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<p class="footnote_table">Calcuation is based on W. C. Schumb, C. N. Satterfield, R. L. Wentworth (Hydrogen peroxide, New York - London 1955)</p>
 			<hr>
 			<hr>
 			<table>
@@ -221,88 +221,38 @@
 					<col width="110">
 					<col width="100">
 					<col width="110">
+					<col width="110">
 				</colgroup>
 				<caption>
-				<strong>Calculate Concentration B
+				<strong>Calculate Mix Percentage
 				</strong>
 				</caption>
 				<tbody>
 					<tr>
-						<th>Type in the<br>density<br>(g/ml)</th>
-						<th>Type in the<br>temperature<br>(°C)</th>
+						<th>Type in the<br>desire concentration<br>(%)</th>
+						<th>Type in the<br>desire weight<br>(kg)</th>
 						<th>&nbsp;</th>
-						<th>Corresponding<br>hydrogen peroxide<br>content<br>(% b.w.)</th>
+						<th>Weight of<br>H2O2<br>of A (kg)</th>
+						<th>Weight of<br>H2O2<br>of B (kg)</th>
 					</tr>
 					<tr valign="top">
 						<td class="highlighted" nowrap="nowrap">
-							<p><input id="dichtexB" size="7" value="1.0000" type="text"> g/ml<br>
-								Use values<br>between<br>1.0000 and 1.4710</p>
+							<p><input id="target_percent" size="7" value="91" type="text"> %<br>
+								Use values<br>between<br>0 and 100</p>
 						</td>
 						<td class="highlighted" nowrap="nowrap">
-							<p><input id="temperaturxB" size="7" value="0" type="text">°C<br>
-								Use values<br>between<br>0 and 96</p>
+							<p><input id="target_weight" size="7" value="20" type="text"> kg<br>
 						</td>
 						<td>
-							<input id="txB" type="hidden">
-							<input id="uxB" type="hidden">
-							<input id="vxB" type="hidden">
-							<input id="wxB" type="hidden">
-							<input id="xxB" type="hidden">
-							<input id="yxB" type="hidden">
-							<input id="zxB" type="hidden">
-							<input id="a1xB" type="hidden">
-							<input id="a2xB" type="hidden">
-							<input id="zwischen11xB" type="hidden">
-							<input id="a3xB" type="hidden">
-							<input id="a4xB" type="hidden">
-							<input id="a5xB" type="hidden">
-							<input id="zwischen12xB" type="hidden">
-							<input id="a6xB" type="hidden">
-							<input id="a7xB" type="hidden">
-							<input id="a8xB" type="hidden">
-							<input id="zwischen13xB" type="hidden">
-							<input id="a9xB" type="hidden">
-							<input id="a10xB" type="hidden">
-							<input id="a11xB" type="hidden">
-							<input id="zwischen14xB" type="hidden">
-							<input id="axB" type="hidden">
-							<input id="cxB" type="hidden">
-							<input id="bxB" type="hidden">
-							<input id="dxB" type="hidden">
-							<input id="gxB" type="hidden">
-							<input id="hxB" type="hidden">
-							<input id="ixB" type="hidden">
-							<input id="jxB" type="hidden">
-							<input id="kxB" type="hidden">
-							<input id="lxB" type="hidden">
-							<input id="mxB" type="hidden">
-							<input id="nxB" type="hidden">
-							<input id="oxB" type="hidden">
-							<input id="pxB" type="hidden">
-							<input id="qxB" type="hidden">
-							<input id="fxB" type="hidden">
-							<input id="wurzelxB" type="hidden">
-							<input id="exB" type="hidden">
-							<input id="rxB" type="hidden">
-							<input id="sxB" type="hidden">
-							<input id="b1xB" type="hidden">
-							<input id="b1axB" type="hidden">
-							<input id="b1bxB" type="hidden">
-							<input id="b2xB" type="hidden">
-							<input id="b2axB" type="hidden">
-							<input id="b3xB" type="hidden">
-							<input id="b4xB" type="hidden">
-							<input id="b4axB" type="hidden">
-							<input id="b5xB" type="hidden">
-							<input id="b6xB" type="hidden">
-							<input id="b7xB" type="hidden">
-							<input id="b8xB" type="hidden">
-							<input id="b9xB" type="hidden">
-							<input id="b10xB" type="hidden">
-							<button class="submit" onclick="calcontent(1);return false;"><span>Calculate</span></button>
+							<input id="wpA" type="hidden">
+							<input id="wpB" type="hidden">
+							<button class="submit" onclick="calmix();return false;"><span>Calculate</span></button>
 						</td>
 						<td class="highlighted" nowrap="nowrap">
-							<p><input id="contentxB" size="7" event.returnvalue="" event.keycode="" type="text"> %</p>
+							<p><input id="targetxA" size="7" event.returnvalue="" event.keycode="" type="text"> kg</p>
+						</td>
+						<td class="highlighted" nowrap="nowrap">
+							<p><input id="targetxB" size="7" event.returnvalue="" event.keycode="" type="text"> kg</p>
 						</td>
 					</tr>
 				</tbody>
