@@ -235,20 +235,20 @@ function calmix()
 	
 	var weight_percentA = document.getElementById('wpA');
 	var weight_percentB = document.getElementById('wpB');
+	
+	weight_percentA.value = (target_percent.value-percentB.value)/(percentA.value-percentB.value);
+	weight_percentB.value = (target_percent.value-percentA.value)/(percentB.value-percentA.value);
 
-	weight_percentA.value = percentB.value / (percentA.value + percentB.value) * target_percent.value;
-	weight_percentB.value = percentA.value / (percentA.value + percentB.value) * target_percent.value;
+	weightA.value = Math.round(weight_percentA.value * target_weight.value*100)/100;
+	weightB.value = Math.round(weight_percentB.value * target_weight.value*100)/100;
 
-	weightA.value = Math.round(weight_percentA.value * target_weight.value)/100;
-	weightB.value = Math.round(weight_percentA.value * target_weight.value)/100;
- 	
- 	if (percentA.value<target_percent.value && percentB.value<target_percent.value) {
-      alert("Both inputs are lower than target concentration. Imposible to mix.");
+ 	if (!((percentA.value<target_percent.value && percentB.value>target_percent.value)||(percentA.value>target_percent.value && percentB.value<target_percent.value))) {
+      alert("Input range does not contain target concentration. Imposible to mix.");
       weightA.value = -1;
       weightB.value = -1;
  	}
- 	if ((percentA.value + percentB.value) == 0) {
-      alert("Havn't Set the Percentage");
+ 	if (percentA.value == percentB.value) {
+      alert("Same Percentage, Check input");
       weightA.value = -1;
       weightB.value = -1;
  	}
