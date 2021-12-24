@@ -81,7 +81,7 @@ function calcdensity ()
     content.value = 100;
   }
 }
-function calcontent ()
+function calcontent(idsuffix)
 {
 	var temperaturx = document.getElementById('temperaturx');
 	var contentx = document.getElementById('contentx');
